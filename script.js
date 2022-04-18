@@ -38,6 +38,15 @@ slider.addEventListener('input', () => {
         grid.appendChild(cell)
     }
 })
+const clearBtn = document.querySelector('#clear')
+clearBtn.addEventListener('click', () => {
+    let val = document.querySelector('#slider').value
+    let cell = grid.children
+    for (let i = 0; i < val*val; i++) {
+        cell[i].style.backgroundColor = 'white'
+    }
+})
+
 createGrid()
 
 
