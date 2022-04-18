@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    border: 2px solid red;
+    margin: 0 auto;
+    height: 700px;
+}
+
+.gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    border: 2px solid black
+}
