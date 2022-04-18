@@ -7,20 +7,30 @@ h1 {
     text-align: center;
 }
 
-.container {
-    max-width: 650px;
-    border: 2px solid darkgrey;
-    margin: 0 auto;
-    height: 650px;
-}
-
-.grid-container {
+body {
+    height: 100vh;
+    border: 2px solid black;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.grid {
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    border: 5px solid darkgrey;
+    height: 575px;
+    width: 575px;
+    background-color: gray;
+    box-shadow: 5px 5px;
 }
 
-.grid {
-    width: 40px;
-    height: 40px;
-    border: 1px solid lightgrey;
+.cell {
+    border: 1px solid black;
+    background: white
+}
+
+.sliderAndValue {
+    display: flex;
 }

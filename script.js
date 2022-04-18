@@ -1,21 +1,45 @@
 
 
-const container = document.querySelector('.container')
-
-const gridContainer = document.createElement('div')
-gridContainer.classList.add('grid-container')
+// const container = document.querySelector('.container')
+const grid = document.querySelector('.grid')
 
 
-
-for (let i = 0; i < 256; i++) {
-    const grid = document.createElement('div')
-    grid.classList.add('grid')
-    gridContainer.appendChild(grid)
-
-    grid.addEventListener('mouseover', () => {
-        grid.setAttribute('style', 'background: red')
-    })
+function createGrid() {
+    for (let i = 0; i < 256; i++) {
+        const cell = document.createElement('div')
+        cell.classList.add('cell')
+        cell.addEventListener('mouseover', (event) => {
+            event.target.style.backgroundColor = 'black'
+        })
+        grid.appendChild(cell)
+    }
 }
-container.appendChild(gridContainer)
+
+function removeAllChildNodes(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+const slider = document.querySelector('#slider')
+const screenValue = document.querySelector('.value')
+
+slider.addEventListener('input', () => {
+    let value = slider.value
+    screenValue.textContent = value
+    removeAllChildNodes(grid)
+    grid.setAttribute('style', `grid-template-columns: repeat(${value}, 2fr); grid-template-rows: repeat(${value}, 2fr)`)
+    for (let i = 0; i < value * value; i++) {
+        const cell = document.createElement('div')
+        cell.classList.add('cell')
+        cell.addEventListener('mouseover', (event) => {
+            event.target.style.backgroundColor = 'black'
+        })
+        grid.appendChild(cell)
+    }
+})
+createGrid()
+
+
 
 
