@@ -15,6 +15,15 @@ function createGrid() {
     }
 }
 
+function getRandomColor(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+}
+
 function removeAllChildNodes(parent){
     while(parent.firstChild){
         parent.removeChild(parent.firstChild);
@@ -38,6 +47,16 @@ slider.addEventListener('input', () => {
         grid.appendChild(cell)
     }
 })
+const rgb = document.querySelector('#rgb');
+rgb.addEventListener('click', function(){
+    let val = document.getElementById('slider').value;
+    let cell = grid.children
+    for (let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = getRandomColor();
+        })
+    }
+});
 const clearBtn = document.querySelector('#clear')
 clearBtn.addEventListener('click', () => {
     let val = document.querySelector('#slider').value
@@ -46,6 +65,8 @@ clearBtn.addEventListener('click', () => {
         cell[i].style.backgroundColor = 'white'
     }
 })
+
+
 
 createGrid()
 
