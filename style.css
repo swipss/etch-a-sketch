@@ -43,6 +43,7 @@ body {
     background: black;
     outline: none;
     border-radius: 50px;
+    border: 2px solid black
 }
 
 #slider::-webkit-slider-thumb {
