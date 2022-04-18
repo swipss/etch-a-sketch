@@ -11,7 +11,6 @@ h1 {
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    border: 2px solid black;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -20,11 +19,12 @@ body {
     display: inline-grid;
     grid-template-columns: repeat(16, 2fr);
     grid-template-rows: repeat(16, 2fr);
-    border: 5px solid darkgrey;
+    border: 5px solid black;
     height: 575px;
     width: 575px;
     background-color: gray;
-    box-shadow: 5px 5px;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 5px;
 }
 
 .cell {
@@ -68,6 +68,8 @@ body {
     height: 50px;
     justify-content: space-evenly;
     align-items: center;
+    margin: 15px 0;
+
 }
 
 button {
@@ -75,5 +77,18 @@ button {
     font-weight: bold;
     background-color: white;
     border-radius: 5px;
-    border: 2px solid black
+    border: 3px solid black;
+}
+#rgb {
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    color: white;
+}   
+#black {
+    color: white;
+    background-color: black;
+}
+.footer {
+    margin-top: auto;
 }
