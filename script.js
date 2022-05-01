@@ -77,6 +77,18 @@ black.addEventListener('click', function(){
     }
 });
 
+const color = document.getElementById('color')
+color.addEventListener('change', function() {
+    let sliderValue = document.getElementById('slider').value
+    let colorValue = document.getElementById('color').value
+    let cell = grid.children
+    for (let i = 0; i < sliderValue*sliderValue; i++) {
+        cell[i].addEventListener('mouseover', function(event) {
+            event.target.style.backgroundColor = colorValue
+        })
+    }
+})
+
 
 createGrid()
 
